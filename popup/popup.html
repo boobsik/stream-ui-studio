@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>stream-ui-studio</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="stripe" aria-hidden="true"><i></i><i></i></div>
+
+  <header class="head">
+    <div class="brand">STREAM<b>/</b>UI STUDIO</div>
+    <div class="host" id="host">—</div>
+  </header>
+
+  <div class="status" id="status">Проверка активной вкладки…</div>
+
+  <main id="main" hidden>
+    <button class="btn accent wide" id="open-editor" type="button">
+      Открыть редактор на странице
+    </button>
+    <button class="btn wide" id="inspector" type="button">
+      Включить инспектор элементов
+    </button>
+  </main>
+
+  <script src="../lib/constants.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "stream-ui-studio",
+  "short_name": "SUI Studio",
+  "version": "1.0.0",
+  "description": "Инспектор DOM и пресеты интерфейса для YouTube и Twitch. Без сборщиков, без лишнего.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "stream-ui-studio@extension.local"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.twitch.tv/*",
+    "*://www.twitch.tv/*",
+    "*://*.youtube.com/*",
+    "*://youtube.com/*",
+    "*://www.youtube.com/*",
+    "*://*.youtube-nocookie.com/*",
+    "*://youtu.be/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "scripts": [
+      "background/service-worker.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.twitch.tv/*",
+        "*://www.twitch.tv/*",
+        "*://*.youtube.com/*",
+        "*://youtube.com/*",
+        "*://www.youtube.com/*",
+        "*://*.youtube-nocookie.com/*",
+        "*://youtu.be/*"
+      ],
+      "js": [
+        "content/content.js",
+        "lib/constants.js",
+        "lib/drag.js",
+        "lib/storage.js",
+        "lib/style-engine.js",
+        "lib/inspector.js",
+        "lib/ui-styles.js",
+        "lib/ui.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "stream-ui-studio — открыть панель",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

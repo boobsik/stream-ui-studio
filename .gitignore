@@ -1,0 +1,33 @@
+# Dependencies and build artifacts
+node_modules/
+web-ext-artifacts/
+dist/
+build/
+*.zip
+*.xpi
+
+# Logs and local environment
+*.log
+.env
+.env.*
+!.env.example
+
+# Temporary test/lint artifacts
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.swp
+*.swo
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+sui_verify_*.py
+test-*harness.py
+temp-*.py
+
+# OS metadata
+.DS_Store
+Thumbs.db

@@ -1,0 +1,97 @@
+/* stream-ui-studio — popup. Unslop: только #0B0C0E, тонкие границы и акценты площадок. */
+:root {
+  color-scheme: dark;
+  --bg: #0B0C0E;
+  --line: rgba(255, 255, 255, 0.08);
+  --text: #E7E7EA;
+  --muted: #77777E;
+  --accent: #FF0033;
+  --youtube: #FF0033;
+  --twitch: #9146FF;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 322px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 12px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.stripe { display: flex; height: 2px; }
+.stripe i { display: block; height: 2px; flex: 1; }
+.stripe i:first-child { background: var(--youtube); }
+.stripe i:last-child { background: var(--twitch); }
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font: 11px/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.brand b { color: var(--accent); font-weight: 600; }
+
+.host {
+  max-width: 148px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 3px 6px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font: 10px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.status {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font: 10px/1.35 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+.status.ok { color: var(--text); }
+.status.err { color: var(--accent); }
+
+main { padding: 12px; }
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 8px 9px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font: 11px/1.3 ui-monospace, SFMono-Regular, Consolas, monospace;
+  text-align: left;
+  cursor: pointer;
+}
+.btn:hover { border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); }
+.btn.accent { border-color: var(--accent); color: var(--accent); }
+.btn + .btn { margin-top: 6px; }
+
+.foot {
+  padding: 9px 12px 11px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: 10px/1.35 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.kbd {
+  display: inline-block;
+  padding: 0 4px;
+  border: 1px solid var(--line);
+  color: #B9B9C0;
+}
